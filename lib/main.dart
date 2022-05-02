@@ -132,7 +132,7 @@ class _onBoardingState extends State<onBoarding> {
                   },
                   children: <Widget>[
                     mainView(
-                        'assets/img/    image_1.png',
+                        'assets/img/tutorial_image_1.png',
                         'Tumbuhan dapat membantu menambah sumber '
                             'Oksigen bagi bumi'),
                     mainView('assets/img/tutorial_image_2.png', 'Go Green'),
