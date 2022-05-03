@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'warna_app.dart';
+import 'layar_login.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -102,11 +103,11 @@ class _onBoardingState extends State<onBoarding> {
     if (page == 2) {
       setState(() {
         //untuk update UI
-        teksButton = 'NEXT';
+        teksButton = 'SKIP';
       });
     } else {
       setState(() {
-        teksButton = 'SKIP';
+        teksButton = 'NEXT';
       });
     }
     setState(() {
@@ -161,9 +162,26 @@ class _onBoardingState extends State<onBoarding> {
                 ],
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Text(teksButton),
+            Container(
+              height: 45,
+              margin: EdgeInsets.all(40),
+              width: 135,
+              child: FlatButton(
+                child: Text(
+                  teksButton,
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                onPressed: () {
+                  if (teksButton == 'SKIP') {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LayarLogin()));
+                  }
+                },
+                color: Colors.green,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(35)),
+              ),
             )
           ],
         ),
@@ -179,10 +197,12 @@ class _onBoardingState extends State<onBoarding> {
         children: <Widget>[
           Image.asset(
             image,
-            fit: BoxFit.none,
+            scale: 1,
+            width: 200,
+            height: 200,
           ),
           SizedBox(
-            height: 15,
+            height: 30,
           ),
           Text(
             title,
@@ -199,15 +219,19 @@ class _onBoardingState extends State<onBoarding> {
   Widget pageIndicator(bool isActive) {
     return Container(
       height: 10,
-      width: 30,
-      margin: EdgeInsets.only(left: 10, right: 10),
+      width: isActive ? 35 : 10,
+      margin: EdgeInsets.only(left: 3, right: 3),
       child: DecoratedBox(
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           color: isActive ? warnaAktif : warnaTidakaktif,
-          borderRadius: BorderRadius.all(
-            Radius.elliptical(4, 4),
-          ),
+          borderRadius: isActive
+              ? BorderRadius.all(
+                  Radius.elliptical(20, 20),
+                )
+              : BorderRadius.all(
+                  Radius.elliptical(20, 20),
+                ),
         ),
       ),
     );
