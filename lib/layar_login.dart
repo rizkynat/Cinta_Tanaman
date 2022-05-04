@@ -1,5 +1,6 @@
 import 'Animasi/FadeAnimation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LayarLogin extends StatelessWidget {
   @override
@@ -66,10 +67,12 @@ class LayarLogin extends StatelessWidget {
                               child: Center(
                                 child: Text(
                                   "Login",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 40,
-                                      fontWeight: FontWeight.bold),
+                                  style: GoogleFonts.robotoMono(
+                                    textStyle: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
                               ),
                             )),
@@ -97,27 +100,30 @@ class LayarLogin extends StatelessWidget {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  padding: EdgeInsets.all(8.0),
-                                  decoration: BoxDecoration(
-                                      border: Border(
-                                          bottom:
-                                              BorderSide(color: Colors.grey))),
-                                  child: TextField(
-                                    decoration: InputDecoration(
-                                        border: InputBorder.none,
-                                        hintText: "Email or Phone number",
-                                        hintStyle:
-                                            TextStyle(color: Colors.grey[400])),
-                                  ),
-                                ),
+                                    padding: EdgeInsets.all(8.0),
+                                    decoration: BoxDecoration(
+                                        border: Border(
+                                            bottom: BorderSide(
+                                                color: Colors.grey))),
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: "Email or No.Telp",
+                                          hintStyle: GoogleFonts.openSans(
+                                            textStyle: TextStyle(
+                                                color: Colors.grey[400]),
+                                          )),
+                                    )),
                                 Container(
                                   padding: EdgeInsets.all(8.0),
                                   child: TextField(
                                     decoration: InputDecoration(
                                         border: InputBorder.none,
-                                        hintText: "Password",
-                                        hintStyle:
-                                            TextStyle(color: Colors.grey[400])),
+                                        hintText: "Kata Sandi",
+                                        hintStyle: GoogleFonts.openSans(
+                                          textStyle: TextStyle(
+                                              color: Colors.grey[400]),
+                                        )),
                                   ),
                                 )
                               ],
@@ -128,33 +134,40 @@ class LayarLogin extends StatelessWidget {
                       ),
                       FadeAnimation(
                           2,
-                          Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                gradient: LinearGradient(colors: [
-                                  Color.fromRGBO(76, 175, 80, 1),
-                                  Color.fromRGBO(76, 175, 80, .6),
-                                ])),
-                            child: Center(
-                              child: Text(
-                                "Login",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                          FlatButton(
+                              height: 50,
+                              onPressed: () => {
+                                    //Navigator.pushReplacement(context,
+                                    //MaterialPageRoute(builder: (context) => LayarLogin()));
+                                  },
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+
+                                    borderRadius: BorderRadius.circular(10),
+                                    gradient: LinearGradient(colors: [
+                                      Color.fromRGBO(76, 175, 80, 1),
+                                      Color.fromRGBO(76, 175, 80, .6),
+                                    ])),
+                                child: Center(
+                                  child: Text("Login",
+                                      style: GoogleFonts.robotoMono(
+                                        textStyle: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold),
+                                      )),
+                                ),
                               ),
-                            ),
-                          )),
+                              )),
                       SizedBox(
                         height: 70,
                       ),
                       FadeAnimation(
                           1.5,
-                          Text(
-                            "Forgot Password?",
-                            style: TextStyle(
-                                color: Color.fromRGBO(76, 175, 80, 1)),
-                          )),
+                          Text("Forgot Password?",
+                              style: GoogleFonts.robotoMono(
+                                textStyle: TextStyle(
+                                    color: Color.fromRGBO(76, 175, 80, 1)),
+                              ))),
                     ],
                   ),
                 )

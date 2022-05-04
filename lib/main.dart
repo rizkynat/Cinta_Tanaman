@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'warna_app.dart';
 import 'layar_login.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
       title: 'Splash Screen',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        textTheme: GoogleFonts.openSansTextTheme(
+          Theme.of(context)
+              .textTheme, // If this is not set, then ThemeData.light().textTheme is used.
+        ),
       ),
       home: LayarSplash(),
       debugShowCheckedModeBanner: false,
@@ -62,14 +67,15 @@ class _LayarSplashState extends State<LayarSplash> {
                     Image.asset('assets/img/logo.png',
                         height: 150.0, width: 150.0),
                     Text(
-                      "\nTanaman untuk masa depan",
+                      "\nTanaman sehat, Bumi sehat.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.normal,
                         fontSize: 18.0,
                       ),
-                    )
+                    ),
+                    SizedBox(height: 80),
                   ]),
                 ])));
   }
@@ -209,8 +215,11 @@ class _onBoardingState extends State<onBoarding> {
             textAlign: TextAlign.center,
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 14.0),
-          )
+            style:TextStyle(
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.normal,
+                  color: Color.fromARGB(255, 97, 95, 95)),
+            ),
         ],
       ),
     );
