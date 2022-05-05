@@ -12,7 +12,7 @@
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/onboarding_3.png">
 <br/>
 5. Login_1 <br />
-<img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/login_1.png>
+<img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/login_1.png">
 <br/>
 6. Login_2 <br />
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/login_2.png">
@@ -27,7 +27,7 @@
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/halaman_utama_1.png">
 <br/>
 10. Halaman_Utama_2 <br />
-<img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/halaman_utama_2.png>
+<img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/halaman_utama_2.png">
 
 
 
