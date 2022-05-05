@@ -181,7 +181,7 @@ class _onBoardingState extends State<onBoarding> {
                 onPressed: () {
                   if (teksButton == 'SKIP') {
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LayarLogin()));
+                        MaterialPageRoute(builder: (context) => LayarLogin(onSubmit: (value) => print(value),)));
                   }
                 },
                 color: Colors.green,
