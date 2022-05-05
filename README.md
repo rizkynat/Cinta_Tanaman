@@ -6,7 +6,7 @@
 2. Onboarding 1<br /><br/>
 ![Onboarding 1](https://github.com/rizkynat/CintaTanaman/blob/master/screenshots/onboarding_1.png)<br/>
 3. Onboarding_2 <br />
-<img scr="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/onboarding_2.png">
+![Onboarding 2](https://github.com/rizkynat/CintaTanaman/blob/master/screenshots/onboarding_2.png)
 <br/>
 4. Onboarding_3 <br />
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/onboarding_3.png">
