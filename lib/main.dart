@@ -180,8 +180,14 @@ class _onBoardingState extends State<onBoarding> {
                 ),
                 onPressed: () {
                   if (teksButton == 'SKIP') {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LayarLogin(onSubmit: (value) => print(value),)));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LayarLogin(
+                                  onSubmit: (value) => print(value),
+                                )));
+                  } else {
+                    getChangedPageAndMover(jumlahCurrentPage + 1);
                   }
                 },
                 color: Colors.green,
@@ -215,11 +221,11 @@ class _onBoardingState extends State<onBoarding> {
             textAlign: TextAlign.center,
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
-            style:TextStyle(
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.normal,
-                  color: Color.fromARGB(255, 97, 95, 95)),
-            ),
+            style: TextStyle(
+                fontSize: 22.0,
+                fontWeight: FontWeight.normal,
+                color: Color.fromARGB(255, 97, 95, 95)),
+          ),
         ],
       ),
     );

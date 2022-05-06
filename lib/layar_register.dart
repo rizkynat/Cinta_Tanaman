@@ -1,23 +1,25 @@
-import 'package:hello_world/layar_register.dart';
+import 'package:hello_world/user.dart';
 
 import 'Animasi/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'beranda.dart';
+import 'layar_login.dart';
 import 'user.dart';
 
-class LayarLogin extends StatefulWidget {
-  const LayarLogin({Key? key, required this.onSubmit}) : super(key: key);
+class LayarRegister extends StatefulWidget {
+  const LayarRegister({Key? key, required this.onSubmit}) : super(key: key);
   final ValueChanged<String> onSubmit;
   @override
-  _LayarLoginState createState() => _LayarLoginState();
+  _LayarRegisterState createState() => _LayarRegisterState();
 }
 
-class _LayarLoginState extends State<LayarLogin> {
+class _LayarRegisterState extends State<LayarRegister> {
   final akunUser akun = akunUser();
   var _text = '';
+  final namaLengkap = TextEditingController();
   final email = TextEditingController();
   final kataSandi = TextEditingController();
+  final konkataSandi = TextEditingController();
   bool _submitted = false;
 
   @override
@@ -54,8 +56,7 @@ class _LayarLoginState extends State<LayarLogin> {
 
   void _submit() {
     setState(() => _submitted = true);
-    if (email.value.text == akun.getEmail()  &&
-        kataSandi.value.text == akun.getKataSandi()) {
+    if (konkataSandi.value.text == kataSandi.value.text) {
       //jika tidak ada errortext maka submit
       if (_errorEmailText == null) {
         widget.onSubmit(email.value.text);
@@ -78,18 +79,16 @@ class _LayarLoginState extends State<LayarLogin> {
   }
 
   void _navigateAndDisplaySelection(BuildContext context) async {
-    final result = await Navigator.push(
-      context,
-      // Create the SelectionScreen in the next step.
-      MaterialPageRoute(builder: (context) => const FirstRoute()),
-    );
+    akun.NamaLengkap = namaLengkap.value.text;
+    akun.email = email.value.text;
+    akun.kataSandi = kataSandi.value.text;
   }
 
   void showAlert(BuildContext context) {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              content: Text("Email dan Kata Sandi salah!"),
+              content: Text("Kata Sandi dan Konfirmasi kata sandi tidak sama!"),
             ));
   }
 
@@ -156,7 +155,7 @@ class _LayarLoginState extends State<LayarLogin> {
                               margin: EdgeInsets.only(top: 50),
                               child: Center(
                                 child: Text(
-                                  "Masuk",
+                                  "Daftar",
                                   style: GoogleFonts.robotoMono(
                                     textStyle: TextStyle(
                                         color: Colors.white,
@@ -196,6 +195,26 @@ class _LayarLoginState extends State<LayarLogin> {
                                             bottom: BorderSide(
                                                 color: Colors.grey))),
                                     child: TextField(
+                                      controller: namaLengkap,
+                                      decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          errorText: _submitted
+                                              ? _errorEmailText
+                                              : null,
+                                          labelText: "Nama Lengkap",
+                                          hintStyle: GoogleFonts.openSans(
+                                            textStyle: TextStyle(
+                                                color: Colors.grey[400]),
+                                          )),
+                                      onChanged: (_) => setState(() {}),
+                                    )),
+                                Container(
+                                    padding: EdgeInsets.all(8.0),
+                                    decoration: BoxDecoration(
+                                        border: Border(
+                                            bottom: BorderSide(
+                                                color: Colors.grey))),
+                                    child: TextField(
                                       controller: email,
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -211,6 +230,10 @@ class _LayarLoginState extends State<LayarLogin> {
                                     )),
                                 Container(
                                   padding: EdgeInsets.all(8.0),
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                          bottom:
+                                              BorderSide(color: Colors.grey))),
                                   child: TextField(
                                     controller: kataSandi,
                                     decoration: InputDecoration(
@@ -219,6 +242,23 @@ class _LayarLoginState extends State<LayarLogin> {
                                             ? _errorKatasandiText
                                             : null,
                                         labelText: "Kata Sandi",
+                                        hintStyle: GoogleFonts.openSans(
+                                          textStyle: TextStyle(
+                                              color: Colors.grey[400]),
+                                        )),
+                                    onChanged: (_) => setState(() {}),
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: TextField(
+                                    controller: konkataSandi,
+                                    decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        errorText: _submitted
+                                            ? _errorKatasandiText
+                                            : null,
+                                        labelText: "Konfirmasi Kata Sandi",
                                         hintStyle: GoogleFonts.openSans(
                                           textStyle: TextStyle(
                                               color: Colors.grey[400]),
@@ -248,7 +288,7 @@ class _LayarLoginState extends State<LayarLogin> {
                             style: ElevatedButton.styleFrom(
                                 primary: Colors.transparent,
                                 shadowColor: Colors.transparent),
-                            child: Text('Masuk',
+                            child: Text('Daftar',
                                 style: GoogleFonts.robotoMono(
                                   textStyle: TextStyle(
                                       color: Colors.white,
@@ -261,28 +301,11 @@ class _LayarLoginState extends State<LayarLogin> {
                         height: 10,
                       ),
                       FadeAnimation(
-                        1.5,
-                        GestureDetector(
-                            onTap: () {
-                              print('Gunakan akun ini:\nEmail:' +
-                                  akun.getEmail() +'\nPassword:'+akun.getKataSandi());
-                            },
-                            child: Text("Lupa Kata Sandi?",
-                                style: GoogleFonts.robotoMono(
-                                  textStyle: TextStyle(
-                                      color: Color.fromARGB(255, 74, 208, 78),
-                                      fontWeight: FontWeight.w900),
-                                ))),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      FadeAnimation(
                           1.5,
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Text("Belum memiliki akun?",
+                              Text("Sudah memiliki akun?",
                                   style: GoogleFonts.robotoMono(
                                     textStyle: TextStyle(
                                         color: Color.fromARGB(255, 105, 95, 95),
@@ -293,11 +316,11 @@ class _LayarLoginState extends State<LayarLogin> {
                                   Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => LayarRegister(
+                                          builder: (context) => LayarLogin(
                                               onSubmit: (value) =>
                                                   print(value))));
                                 },
-                                child: Text("Daftar",
+                                child: Text("Masuk",
                                     style: GoogleFonts.robotoMono(
                                       textStyle: TextStyle(
                                           color:

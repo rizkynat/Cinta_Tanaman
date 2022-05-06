@@ -28,6 +28,7 @@
 <br/>
 10. Halaman_Utama_2 <br />
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/halaman_utama_2.png">
-
+11. Daftar <br />
+<img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/daftar.png">
 
 
