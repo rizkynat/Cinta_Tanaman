@@ -23,12 +23,14 @@
 <br/>
 8. Debug <br />
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/debug.png">
-9. Halaman_Utama_1 <br />
+9. Jika 'Lupa kata sandi?' diklik. <br />
+<img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/lupa_kata_sandi.png">
+10. Halaman_Utama_1 <br />
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/halaman_utama_1.png">
 <br/>
-10. Halaman_Utama_2 <br />
+11. Halaman_Utama_2 <br />
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/halaman_utama_2.png">
-11. Daftar <br />
+12. Daftar <br />
 <img src="https://raw.githubusercontent.com/rizkynat/Cinta_Tanaman/master/screenshots/daftar.png">
 
 
