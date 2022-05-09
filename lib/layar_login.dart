@@ -1,4 +1,4 @@
-import 'package:hello_world/layar_register.dart';
+import 'package:Cinta_Tanaman/layar_register.dart';
 
 import 'Animasi/FadeAnimation.dart';
 import 'package:flutter/material.dart';

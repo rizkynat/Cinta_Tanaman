@@ -1,10 +1,14 @@
-import 'package:hello_world/user.dart';
+import 'package:Cinta_Tanaman/user.dart';
 
 import 'Animasi/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'layar_login.dart';
 import 'user.dart';
+import 'dart:io';
+import 'dart:async';
+import 'dart:convert';
+import 'package:path_provider/path_provider.dart';
 
 class LayarRegister extends StatefulWidget {
   const LayarRegister({Key? key, required this.onSubmit}) : super(key: key);
@@ -78,10 +82,12 @@ class _LayarRegisterState extends State<LayarRegister> {
     return email.value.text.isNotEmpty;
   }
 
-  void _navigateAndDisplaySelection(BuildContext context) async {
-    akun.NamaLengkap = namaLengkap.value.text;
-    akun.email = email.value.text;
-    akun.kataSandi = kataSandi.value.text;
+  void _navigateAndDisplaySelection(BuildContext context){
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: Text("Ini hanya layout daftar!"),
+            ));
   }
 
   void showAlert(BuildContext context) {
